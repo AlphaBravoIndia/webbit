@@ -2,6 +2,7 @@
 
 class SubmissionsController < ApplicationController
   before_action :set_submission, only: %i[show edit update destroy]
+  before_action :authenticate_user!, except: %i[show index]
 
   # GET /submissions
   # GET /submissions.json
@@ -15,7 +16,7 @@ class SubmissionsController < ApplicationController
 
   # GET /submissions/new
   def new
-    @submission = Submission.new
+    @submission = current_user.submissions.build
   end
 
   # GET /submissions/1/edit
@@ -24,7 +25,7 @@ class SubmissionsController < ApplicationController
   # POST /submissions
   # POST /submissions.json
   def create
-    @submission = Submission.new(submission_params)
+    @submission = current_user.submissions.new(submission_params)
 
     respond_to do |format|
       if @submission.save
@@ -70,6 +71,6 @@ class SubmissionsController < ApplicationController
 
   # Never trust parameters from the scary internet, only allow the white list through.
   def submission_params
-    params.require(:submission).permit(:title, :body, :url, :submission_image)
+    params.require(:submission).permit(:title, :body, :url, :submission_image, :submission_video)
   end
 end
