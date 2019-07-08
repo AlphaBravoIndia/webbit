@@ -29,7 +29,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 # webbit custom gems
+gem 'carrierwave', '~> 1.3', '>= 1.3.1'
 gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'mini_magick', '~> 4.9', '>= 4.9.3'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
