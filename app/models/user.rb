@@ -6,4 +6,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :submissions
+
+  validates_uniqueness_of :username
+  validate_presence_of :username
 end
