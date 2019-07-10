@@ -8,5 +8,5 @@ class User < ApplicationRecord
   has_many :submissions
 
   validates_uniqueness_of :username
-  validate_presence_of :username
+  validates_presence_of :username
 end
