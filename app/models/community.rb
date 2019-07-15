@@ -1,4 +1,6 @@
+# frozen_string_literal: true
+
 class Community < ApplicationRecord
-  belong_to :user
+  belongs_to :user
   has_many :submissions
 end
