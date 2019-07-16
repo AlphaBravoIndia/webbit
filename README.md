@@ -1,6 +1,6 @@
 # Webbit
 
-A _nearly_ full-feature Reddit clone built with Ruby on Rails.
+A _nearly_ full-feature Reddit clone built with Ruby on Rails, using this project to learn a bit more about Rails.
 
 ## Modeling 
 
