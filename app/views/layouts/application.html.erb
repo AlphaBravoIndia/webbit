@@ -32,7 +32,7 @@
       <% end %>
     <% end %>
 
-    <nav class="bg-white py-2 border-b border-gray-400" role="navigation" arai-label="main navigation">
+    <nav class="js-nav bg-white py-2 border-b border-gray-400" role="navigation" arai-label="main navigation">
       <div class="flex flex-wrap items-center justify-center lg:justify-start lg:content-center px-4 lg:px-6">
 
         <%= link_to root_path, class: "leading-normal no-underline text-gray-800 my-2 md:my-0" do %>
@@ -80,14 +80,14 @@
           </div>
 
           <% if user_signed_in? %>
-            <div class="dropdown rounded bg-white border border-gray-400 text-gray-600 ml-1 hover:bg-gray-200 relative">
+            <div class="dropdown dropdown-user-account rounded bg-white border border-gray-400 text-gray-600 ml-1 hover:bg-gray-200 relative">
               <div class="dropdown-content pt-2 pb-2 pl-3 pr-1">
                 <%= link_to "#", class: "js-dropdown-user-target no-underline flex justify-between text-gray-700 uppercase text-xs tracking-wide items-center font-semibold" do %>
                   <%= current_user.username if current_user.username %>
                   <%= render_svg "icons/chevron-down" %>
                 <% end %>
 
-                <ul class="list-none hidden dropdown-list absolute left-0 rounded-b border-gray-500 shadow">
+                <ul class="list-none hidden dropdown-menu dropdown-menu-right absolute left-0 rounded-b border-gray-400 shadow">
                   <h5 class="mt-2 uppercase text-xs text-gray-500 font-normal py-2 pl-3 tracking-wide">My stuff</h5>
                   <li>
                     <%= link_to "#", class: "hover:bg-purple-500 hover:text-white text-gray-700 no-underline block py-2 px-4 flex items-center text-sm" do %>
